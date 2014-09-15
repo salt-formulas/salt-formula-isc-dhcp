@@ -1,0 +1,31 @@
+{%- load_yaml as raw_server %}
+Debian:
+  pkgs:
+  - isc-dhcp-server
+  service: isc-dhcp-server
+  logging:
+    facility: local7
+  defaults_config: /etc/default/isc-dhcp-server
+  dhcpd_config: /etc/dhcp/dhcpd.conf
+  hosts_config: /etc/dhcp/dhcpd.hosts
+  subnets_config: /etc/dhcp/dhcpd.subnets
+FreeBSD:
+  pkgs:
+  - isc-dhcp42-server 
+  service: isc-dhcpd
+  logging:
+    facility: local7 
+  defaults_config: /etc/rc.conf.d/dhcpd
+  dhcpd_config: /usr/local/etc/dhcpd.conf
+  hosts_config: /usr/local/etc/dhcpd.hosts
+  subnets_config:/usr/local/etc/dhcpd.subnets
+RedHat:
+  pkgs:
+  - dhcp
+  service: dhcpd
+  logging:
+    facility: local7
+  defaults_config: /etc/sysconfig/dhcpd
+{%- endload %}
+
+{%- set server = salt['grains.filter_by'](raw_server, merge=salt['pillar.get']('isc_dhcp:server')) %}
