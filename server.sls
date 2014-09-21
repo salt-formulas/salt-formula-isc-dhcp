@@ -12,7 +12,7 @@ isc_dhcp_packages:
   - template: jinja
   - mode: 644
   - require:
-   - pkg: isc_dhcp_packages
+    - pkg: isc_dhcp_packages
   - watch_in:
     - service: isc_dhcp_service
 
