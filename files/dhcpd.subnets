@@ -1,3 +1,5 @@
+{%- from "isc_dhcp/map.jinja" import server with context %}
+
 {%- for subnet_name, subnet in server.subnet.iteritems() %}
 
 subnet {{ subnet.network }} netmask {{ subnet.netmask }} {
