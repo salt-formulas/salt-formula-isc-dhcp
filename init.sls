@@ -1,8 +1,8 @@
 
 include:
-{%- if pillar.foreman.server.enabled %}
-- foreman.server
+{%- if pillar.isc_dhcp.server.enabled %}
+- isc_dhcp.server
 {%- endif %}
-{%- if pillar.foreman.smart_proxy.enabled %}
-- foreman.smart_proxy
+{%- if pillar.isc_dhcp.smart_proxy.enabled %}
+- isc_dhcp.smart_proxy
 {%- endif %}
