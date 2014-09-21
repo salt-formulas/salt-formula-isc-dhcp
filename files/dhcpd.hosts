@@ -1,0 +1,11 @@
+{%- from "isc_dhcp/map.jinja" import server with context %}
+
+{%- for host_name, host in server.host.iteritems() %}
+
+host {{ host_name }} {
+  hardware ethernet {{ host.mac }};
+  fixed-address {{ host.address }};
+  ddns-hostname "{{ host.hostname }}";
+}
+
+{%- endfor %}
