@@ -5,10 +5,10 @@ isc_dhcp_packages:
   pkg.installed:
   - pkgs: {{ server.pkgs }}
 
-{{ server.config.defaults_config }}:
+{{ server.defaults_config }}:
   file.managed:
   - makedirs: True
-  - source: 'salt://isc_dhcp/files/defaults.{{ salt['grains.get']('os_family')) }}'
+  - source: 'salt://isc_dhcp/files/defaults.{{ grains.os_family }}'
   - template: jinja
   - mode: 644
   - require:
@@ -18,7 +18,7 @@ isc_dhcp_packages:
 
 {%- if server.dhcpd_config is defined %}
 
-{{ server.config.dhcpd.path }}:
+{{ server.dhcpd_config }}:
   file.managed:
   - source: salt://isc_dhcp/files/dhcpd.conf
   - template: jinja
