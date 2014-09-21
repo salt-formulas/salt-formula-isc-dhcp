@@ -1,0 +1,20 @@
+{%- for subnet_name, subnet in server.subnet.iteritems() %}
+
+subnet {{ subnet.network }} netmask {{ subnet.netmask }} {
+  {%- if subnet.range is defined %}
+  pool
+  {
+    range {{ subnet.range }};
+  }
+  {%- endif %}
+
+  option subnet-mask {{ subnet.netmask }};
+  {%- if subnet.gateway is defined %}
+  option routers {{ subnet.gateway }};
+  {%- endif %}
+  {%- if subnet.pxeserver is defined %}
+  next-server {{ subnet.pxeserver }};
+  {%- endif %}
+}
+
+{%- endfor %}
