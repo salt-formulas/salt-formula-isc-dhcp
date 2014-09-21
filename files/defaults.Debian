@@ -3,9 +3,10 @@
 # Path to dhcpd's config file (default: /etc/dhcp/dhcpd.conf).
 DHCPD_CONF=/etc/dhcp/dhcpd.conf
 
+
 # Path to dhcpd's PID file (default: /var/run/dhcpd.pid).
 #DHCPD_PID=/var/run/dhcpd.pid
 
 # On what interfaces should the DHCP server (dhcpd) serve DHCP requests?
 # Separate multiple interfaces with spaces, e.g. "eth0 eth1".
-INTERFACES="{{ server.interfaces|join(' ') }}"
+INTERFACES="{% for interface in server.interfaces %}{{ interface.name }}{% if not loop.last %} {% endif %}{% endfor %}"
