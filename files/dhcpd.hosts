@@ -5,7 +5,9 @@
 host {{ host_name }} {
   hardware ethernet {{ host.mac }};
   fixed-address {{ host.address }};
+  {%- if host.hostname is defined %}
   ddns-hostname "{{ host.hostname }}";
+  {%- endif %}
 }
 
 {%- endfor %}
