@@ -1,0 +1,14 @@
+applications:
+- isc_dhcp
+parameters:
+  isc_dhcp:
+    server:
+      enabled: true
+      omapi_port: 7911
+      authoritative: true
+      interfaces:
+      - name: eth0
+      domain_name: domain.com
+      name_servers:
+      - ns1.domain.com
+      host: {}
