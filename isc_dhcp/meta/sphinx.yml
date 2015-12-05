@@ -1,0 +1,9 @@
+doc:
+  name: ISC DHCP
+  description: ISC DHCP server
+  role:
+  {%- if pillar.isc_dhcp.server is defined %}
+    server:
+      name: server
+      param: {}
+  {%- endif %}
