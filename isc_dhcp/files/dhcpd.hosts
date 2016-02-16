@@ -1,5 +1,6 @@
 {%- from "isc_dhcp/map.jinja" import server with context %}
 
+{%- if server.host is defined %}
 {%- for host_name, host in server.host.iteritems() %}
 
 host {{ host_name }} {
@@ -11,3 +12,5 @@ host {{ host_name }} {
 }
 
 {%- endfor %}
+{%- endif %}
+
