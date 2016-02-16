@@ -4,12 +4,13 @@
 
 ## Sample pillars
 
-ISC DHCP server
+ISC DHCP server with defined host and subnet (client must use the same key)
 
     isc_dhcp:
       server:
         enabled: true
         omapi_port: 7911
+        omapi_key: iFdQ0kvpUo+3gzXGJTpjk7/dl9DI5SuDqMzasDUhBRGEg6VfNYUX+MAU14WoJJZDQbrvC4Pgsdfdsfdsfdsdf==
         authoritative: true
         interfaces:
         - name: eth0
@@ -22,6 +23,14 @@ ISC DHCP server
             mac: 00:11:22:33:44:55:66
             address: 192.168.0.1
             hostname: domain.com
+        subnet:
+          testsubnet:
+            range: 10.0.0.1 10.0.0.100
+            netmask: 255.255.255.0
+            network: 10.0.0.0
+            pxeserver: 10.1.1.1
+
+
 
 ## Read more
 
