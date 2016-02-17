@@ -1,5 +1,5 @@
 parameters:
-  isc-dhcp:
+  isc_dhcp:
     _support:
       collectd:
         enabled: false
