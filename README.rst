@@ -6,6 +6,8 @@
 
 ISC DHCP server with defined host and subnet (client must use the same key)
 
+.. code-block:: yaml
+
     isc_dhcp:
       server:
         enabled: true
@@ -29,8 +31,6 @@ ISC DHCP server with defined host and subnet (client must use the same key)
             netmask: 255.255.255.0
             network: 10.0.0.0
             pxeserver: 10.1.1.1
-
-
 
 ## Read more
 
