@@ -4,11 +4,7 @@
 
 subnet {{ subnet.network }} netmask {{ subnet.netmask }} {
   {%- if subnet.range is defined %}
-  pool
-  {
-	#failover peer "dhcp-failover";
-    range {{ subnet.range }};
-  }
+  range {{ subnet.range }};
   {%- endif %}
 
   option subnet-mask {{ subnet.netmask }};
