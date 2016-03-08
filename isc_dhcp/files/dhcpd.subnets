@@ -14,6 +14,8 @@ subnet {{ subnet.network }} netmask {{ subnet.netmask }} {
   {%- if subnet.pxeserver is defined %}
   next-server {{ subnet.pxeserver }};
   {%- endif %}
+{%- if subnet.unknown_clients is defined %}
+  {{ subnet.unknown_clients }} unknown-clients;
+{% endif %}
 }
-
 {%- endfor %}
