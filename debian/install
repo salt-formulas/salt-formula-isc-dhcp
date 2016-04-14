@@ -1,2 +1,0 @@
-isc_dhcp/*             /usr/share/salt-formulas/env/isc_dhcp/
-metadata/service/*      /usr/share/salt-formulas/reclass/service/isc_dhcp/
