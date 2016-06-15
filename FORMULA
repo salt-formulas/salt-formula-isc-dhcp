@@ -1,0 +1,8 @@
+name: isc-dhcp
+os: Debian, FreeBSD, RedHat, Darwin 
+os_family: Debian, FreeBSD, RedHat, Darwin
+version: 201606
+release: 1
+summary: isc-dhcp salt formula
+description: Install and configure isc-dhcp server
+top_level_dir: isc-dhcp
