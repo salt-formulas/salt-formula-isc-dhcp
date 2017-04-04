@@ -1,8 +1,11 @@
 
-# ISC DHCP server
+================
+ISC DHCP formula
+================
 
 
-## Sample pillars
+Sample pillars
+==============
 
 ISC DHCP server with defined host and subnet (client must use the same key)
 
@@ -32,9 +35,12 @@ ISC DHCP server with defined host and subnet (client must use the same key)
             network: 10.0.0.0
             pxeserver: 10.1.1.1
 
-## Read more
+
+More information
+================
 
 * http://chschneider.eu/linux/server/tftpd-hpa.shtml
+
 
 Documentation and Bugs
 ======================
