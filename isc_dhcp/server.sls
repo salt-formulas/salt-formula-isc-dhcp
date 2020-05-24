@@ -3,7 +3,7 @@
 
 isc_dhcp_packages:
   pkg.installed:
-  - pkgs: {{ server.pkgs }}
+  - pkgs: {{ server.pkgs|tojson }}
 
 {{ server.defaults_config }}:
   file.managed:
